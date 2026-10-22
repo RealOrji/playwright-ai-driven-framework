@@ -1,0 +1,63 @@
+{
+  "name": "playwright-ai-driven-framework",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright + TypeScript end-to-end test framework built on the Page Object Model",
+  "author": "Orji Innocent",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RealOrji/playwright-ai-driven-framework.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RealOrji/playwright-ai-driven-framework/issues"
+  },
+  "homepage": "https://github.com/RealOrji/playwright-ai-driven-framework#readme",
+  "keywords": [
+    "playwright",
+    "e2e",
+    "typescript",
+    "page-object-model",
+    "test-automation"
+  ],
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "pw:ui": "playwright test --ui",
+    "pw:install": "playwright install --with-deps chromium firefox",
+    "test": "playwright test",
+    "test:chrome": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:regression": "playwright test --grep @regression",
+    "test:dev": "TEST_ENV=dev playwright test",
+    "test:staging": "TEST_ENV=staging playwright test",
+    "test:prod": "TEST_ENV=prod playwright test",
+    "report": "playwright show-report",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc -p tsconfig.json",
+    "verify": "npm run format:check && npm run lint && npm run typecheck",
+    "tc:report": "node scripts/traceability.mts",
+    "tc:sync": "node scripts/traceability.mts --update"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^24.19.2",
+    "eslint": "^10.13.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-playwright": "^2.12.1",
+    "exceljs": "^4.4.0",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.10",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.72.0"
+  },
+  "overrides": {
+    "uuid": "^11.1.1"
+  }
+}
